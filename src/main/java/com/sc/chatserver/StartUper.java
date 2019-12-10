@@ -51,9 +51,10 @@ public class StartUper implements Extension, ServletExtension {
 
 				startup = false;
 
-				System.out.println("**********************************************************");
-				System.out.println("******************* SERVER IS READY!!! *******************");
-				System.out.println("**********************************************************");
+				System.err.println("**********************************************************");
+				System.err.println("******************* SERVER IS READY!!! *******************");
+				System.err.println("******************* WELCOME TO HELL!!! *******************");
+				System.err.println("**********************************************************");
 
 			}
 		}).start();
