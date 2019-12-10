@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:complexType name="RegisterNewUserRequest">
+        <xs:sequence>
+            <xs:element name="Username" type="xs:string" nillable="false" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="RegisterNewUserResponse">
+        <xs:sequence>
+            <xs:element name="response" type="xs:string" nillable="false" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="UnRegisterNewUserRequest">
+        <xs:sequence>
+            <xs:element name="Username" type="xs:string" nillable="false" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="UnRegisterNewUserResponse">
+        <xs:sequence>
+            <xs:element name="response" type="xs:string" nillable="false" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+
+    <xs:complexType name="SendMessageRequest">
+        <xs:sequence>
+            <xs:element name="MessageToSend" type="Message" nillable="false" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="SendMessageResponse">
+        <xs:sequence>
+            <xs:element name="response" type="xs:string" nillable="false" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Message">
+        <xs:sequence>
+            <xs:element name="from_username" type="xs:string" nillable="false" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="to_username" type="xs:string" nillable="false" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="message" type="xs:string" nillable="false" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="MessageAsStr">
+        <xs:sequence>
+            <xs:element name="message" type="xs:string" nillable="false" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GetMessagesRequest">
+        <xs:sequence>
+            <xs:element name="Username" type="xs:string" nillable="false" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GetMessagesResponse">
+        <xs:sequence>
+            <xs:element name="messages" type="MessageAsStr" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
